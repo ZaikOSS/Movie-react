@@ -14,9 +14,8 @@ import TrendCard from "../components/TrendCard";
 
 function Trend() {
   const [slides, setSlides] = useState([]);
-
   const fetchData = () => {
-    fetch("/data/movieData.json") // Updated to use a relative path
+    fetch("http://localhost:3000/data/movieData.json")
       .then((res) => res.json())
       .then((data) => {
         setSlides(data);
