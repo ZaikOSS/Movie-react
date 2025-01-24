@@ -1,0 +1,61 @@
+/* Movie Date */
+.date {
+  position: absolute;
+  top: 20%; /* Keep the date near the top */
+  right: 5%; /* Align to the right edge */
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.8s ease; /* Smooth transition for fade-in */
+  z-index: 1000;
+  text-align: center;
+  transform: translateY(-50%) scale(0.9); /* Subtle animation effect */
+}
+
+.date.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0) scale(1); /* Bring it into view */
+}
+
+/* Stylish Date Title */
+.date h2 {
+  font-family: 'Racing Sans One', cursive; /* Stylish font */
+  font-size: 4rem; /* Adjust font size */
+  font-weight: bold;
+  color: transparent; /* Transparent text for background effect */
+  text-transform: uppercase;
+  margin: 0; /* No extra margins */
+  text-align: center;
+  line-height: 1.2; /* Space between the two lines */
+
+  /* Transparent text effect */
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.8),
+    rgba(0, 0, 0, 0.3)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Add shadow for better readability */
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 0, 0, 0.2);
+
+  /* Animate the gradient */
+  background-size: 200%;
+  animation: gradientMove 3s infinite alternate;
+}
+
+/* Break the text into two lines */
+.date h2 span {
+  display: block; /* Forces a line break */
+}
+
+/* Smooth gradient animation */
+@keyframes gradientMove {
+  from {
+    background-position: 0%;
+  }
+  to {
+    background-position: 100%;
+  }
+}

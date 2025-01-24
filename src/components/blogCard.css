@@ -1,0 +1,209 @@
+/* blogCard.css */
+
+:root {
+    --primary-color: #ff6b6b; /* Vibrant red */
+    --accent-color: #6bffb8; /* Complementary green */
+    --text-color: #f4f4f4;
+    --bg-dark: #121212;
+    --bg-light: #1e1e1e;
+    --border-radius: 16px;
+    --transition-speed: 0.35s;
+  }
+  
+  .blog {
+    perspective: 1500px;
+  }
+  
+  .blog article {
+    background: linear-gradient(135deg, var(--bg-dark), var(--bg-light));
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: 
+      transform var(--transition-speed) cubic-bezier(0.25, 0.1, 0.25, 1),
+      box-shadow var(--transition-speed) ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    backdrop-filter: blur(15px);
+    box-shadow: 
+      0 15px 35px rgba(0, 0, 0, 0.4),
+      0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .blog article::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--transition-speed) ease;
+    z-index: 2;
+  }
+  
+  .blog article:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  .blog article:hover {
+    transform: 
+      translateY(-15px) 
+      rotateX(4deg) 
+      rotateY(-2deg) 
+      scale(1.035);
+    box-shadow: 
+      0 25px 50px rgba(0, 0, 0, 0.5),
+      0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .post-img {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+  }
+  
+  .post-img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(transparent 60%, rgba(0, 0, 0, 0.7));
+    opacity: 0;
+    transition: opacity var(--transition-speed) ease;
+  }
+  
+  .post-img:hover::after {
+    opacity: 1;
+  }
+  
+  .post-img img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    filter: brightness(0.9);
+    transition: 
+      transform var(--transition-speed) ease,
+      filter var(--transition-speed) ease;
+  }
+  
+  .post-img:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+  }
+  
+  .post-category {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+    opacity: 0.8;
+    transition: opacity var(--transition-speed) ease;
+    padding: 0 15px;
+  }
+  
+  .post-category:hover {
+    opacity: 1;
+  }
+  
+  h2 {
+    margin-bottom: 15px;
+    padding: 0 15px;
+  }
+  
+  h2 a {
+    color: var(--text-color);
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+  }
+  
+  h2 a::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    transition: width var(--transition-speed) ease;
+  }
+  
+  h2 a:hover::before {
+    width: 100%;
+  }
+  
+  .d-flex {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    padding: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .post-author-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid var(--primary-color);
+    transition: 
+      transform var(--transition-speed) cubic-bezier(0.68, -0.55, 0.27, 1.55),
+      box-shadow var(--transition-speed) ease;
+  }
+  
+  .post-author-img:hover {
+    transform: scale(1.2) rotate(10deg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .post-meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .post-author-list {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--text-color);
+    transition: color var(--transition-speed) ease;
+  }
+  
+  .d-flex:hover .post-author-list {
+    color: var(--primary-color);
+  }
+  
+  .post-date {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.75rem;
+    font-style: italic;
+  }
+  
+  @media (max-width: 768px) {
+    .blog article {
+      transform: none !important;
+      box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.3),
+        0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+  
+    .post-author-img {
+      width: 40px;
+      height: 40px;
+    }
+  
+    h2 {
+      font-size: 1.25rem;
+    }
+  }

@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Eater&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary: #f37000;
+}
+
+body {
+  background: #000000;
+  font-family: 'Roboto', sans-serif;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}

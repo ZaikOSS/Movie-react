@@ -1,0 +1,92 @@
+/* Overlay to create a blurry background */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark semi-transparent overlay */
+  backdrop-filter: blur(10px); /* Blurry effect for the background */
+  z-index: 1400; /* Ensure it's behind the modal but above other content */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.modalOverlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modal content */
+.movieModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 800px;
+  background: rgba(0, 0, 0, 0.9); /* Slightly darker modal background */
+  backdrop-filter: blur(20px); /* Blurred modal background */
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+  z-index: 1500;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.movieModal iframe {
+  width: 100%;
+  height: 450px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.movieModal .modalClose {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.2); /* Transparent background */
+  color: #ffffff;
+  font-size: 2rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.movieModal .modalClose:hover {
+  background: rgba(255, 255, 255, 0.4); /* Slightly more opaque on hover */
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.movieModal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Fade-in animation for the modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -55%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.movieModal.active {
+  animation: fadeIn 0.5s ease forwards;
+}

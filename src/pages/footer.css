@@ -1,0 +1,120 @@
+:root {
+    /* Color Scheme */
+    --color-bg-primary: #121212;
+    --color-text-primary: #e0e0e0;
+    --color-accent: #ff7f50; /* Orange color */
+    --color-text-secondary: rgba(224, 224, 224, 0.7);
+  
+    /* Typography */
+    --font-stack: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    --font-size-base: 1rem;
+    --font-size-small: 0.875rem;
+  
+    /* Spacing */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+  }
+  
+  /* Base Footer Styles */
+  .footer {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: var(--font-stack);
+    line-height: 1.5;
+    border-top: 4px solid var(--color-accent); /* Bold orange line at the top */
+    padding: var(--spacing-xl) 0;
+  }
+  
+  /* Footer Content Wrapper */
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    justify-content: space-between;
+  }
+  
+  /* Footer Sections */
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .footer-section h4 {
+    color: var(--color-accent);
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--color-accent); /* Orange underline for headings */
+    padding-bottom: var(--spacing-sm);
+  }
+  
+  /* Footer Links */
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+  }
+  
+  .footer-links a:hover {
+    color: var(--color-accent);
+  }
+  
+  /* Social Links */
+  .social-links {
+    display: flex;
+    gap: var(--spacing-md);
+  }
+  
+  .social-links a {
+    color: var(--color-text-secondary);
+    font-size: 1.25rem;
+    transition: color var(--transition-speed) ease;
+  }
+  
+  .social-links a:hover {
+    color: var(--color-accent);
+  }
+  
+  /* Footer Bottom Section */
+  .footer-bottom {
+    background-color: rgba(18, 18, 18, 0.9);
+    padding: var(--spacing-md);
+    text-align: center;
+    font-size: var(--font-size-small);
+    margin-top: var(--spacing-xl);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .footer-section {
+      align-items: center;
+    }
+  
+    .social-links {
+      justify-content: center;
+    }
+  }
+  
+  /* Accessibility Enhancements */
+  .footer a:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }

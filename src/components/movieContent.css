@@ -1,0 +1,68 @@
+/* Movie Content */
+.banner .content {
+  position: absolute;
+  top: 40%; /* Moves content slightly higher */
+  left: 5%; /* Keeps it near the left side */
+  transform: translateY(-40%); /* Adjusts for perfect vertical centering based on the new top */
+  max-width: 400px; /* Restricts the content width */
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0);
+  transition: 1s;
+  z-index: 1000;
+}
+
+/* Active state for Movie Content */
+.banner .content.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-40%) scale(1);
+}
+
+/* Movie Title Image */
+.movie-title {
+  max-width: 200px; /* Slightly smaller title image */
+  margin-bottom: 15px; /* Reduced margin below the title */
+  width: 100%;
+  height: auto;
+}
+
+/* Movie Details */
+.banner .content h4 {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+  font-size: 14px; /* Smaller font size */
+  margin-bottom: 15px; /* Reduced spacing below the details */
+}
+
+.banner .content h4 span {
+  padding: 0 8px; /* Reduced padding between details */
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.banner .content h4 span:last-child {
+  border-right: none;
+}
+
+/* Description */
+.banner .content p {
+  font-size: 0.85em; /* Slightly smaller description text */
+  font-weight: 400;
+  line-height: 1.5em;
+  color: #ffffff;
+  margin: 15px 0 25px; /* Adjusted spacing for better proportions */
+}
+
+/* Buttons */
+.banner .content .button {
+  display: flex;
+  justify-content: flex-start; /* Aligns buttons to the left */
+  gap: 10px; /* Adds less spacing between buttons */
+}
+
+.banner .content .button button {
+  padding: 8px 12px; /* Slightly smaller buttons */
+  border-radius: 4px;
+  font-size: 12px; /* Smaller font size for buttons */
+  cursor: pointer;
+}

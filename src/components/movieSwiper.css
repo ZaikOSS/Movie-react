@@ -1,0 +1,66 @@
+/* Swiper Container */
+.movieSwiper {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%; /* Smaller width */
+  max-width: 400px; /* Reduce max-width */
+  padding: 6px 0;
+  background: rgba(0, 0, 0, 0.4); /* Lighter background */
+  border-radius: 8px;
+  z-index: 10;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+/* Swiper Slide */
+.movieSwiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px; /* Smaller width for slides */
+  height: 250px; /* Adjust height for compact display */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2); /* Adjusted shadow for top/bottom control */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Movie Images */
+.movieSwiper .swiper-slide img {
+  width: 100%;
+  height: 100%; /* Ensure the image takes the full height of the slide */
+  object-fit: cover; /* Keep the aspect ratio intact */
+  border-radius: 8px;
+}
+
+/* Hover Effects */
+.movieSwiper .swiper-slide:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3); /* Adjusted hover shadow for more depth */
+}
+
+/* Swiper Pagination */
+.movieSwiper .swiper-pagination {
+  bottom: 5px; /* Adjust position */
+}
+
+.movieSwiper .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.7);
+  width: 5px;
+  height: 5px;
+  margin: 0 2px;
+  transition: background 0.3s ease;
+}
+
+.movieSwiper .swiper-pagination-bullet-active {
+  background: #ff6b6b;
+}
+
+/* Disable Default Coverflow Shadows */
+.movieSwiper .swiper-slide-shadow-left,
+.movieSwiper .swiper-slide-shadow-right {
+  display: none;
+}
