@@ -5,7 +5,7 @@ function Blog() {
   const [blogs, setBlogs] = useState([]);
 
   const fetchData = () => {
-    fetch("http://localhost:3000/data/blogData.json")
+    fetch("https://zaikoss.github.io/api_movies/blogData.json")
       .then((res) => res.json())
       .then((data) => {
         setBlogs(data);

@@ -10,7 +10,7 @@ function Banner() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/data/movieData.json");
+      const response = await fetch("https://zaikoss.github.io/api_movies/movieData.json");
       if (!response.ok) {
         throw new Error("Failed to fetch movie data");
       }
