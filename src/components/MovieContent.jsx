@@ -1,16 +1,20 @@
 import React from "react";
 import "./movieContent.css";
 import Button from "./Button";
+
 function MovieContent({ movie }) {
+  // Assign movie.titleImg to a variable
+  const titleImgSrc = movie.titleImg; // This is the variable holding the image URL
+
   return (
     <div className={`content ${movie.active ? "active" : ""}`}>
-      <img src={movie.titleImg} alt="Movie Title" className="movie-title" />
+      <img src={titleImgSrc} alt="Movie Title" className="movie-title" />
       <h4>
         <span>{movie.year}</span>
         <span>
           <i>{movie.ageLimit}</i>
         </span>
-        <span>{movie.lenght}</span>
+        <span>{movie.length}</span>
         <span>{movie.category}</span>
       </h4>
       <p>{movie.description}</p>
